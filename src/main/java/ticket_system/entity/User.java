@@ -1,25 +1,27 @@
+package ticket_system.entity;
+
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@table(name = "Users")
+@Table(name = "users")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+public class User {
 
-public class user {
     @Id
-    @GeneratedValue(strategy = GeneretionType.IDENTITY)
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
 
-    //garante que dois usuarios não tenham o mesmo email
+    private String name;
+
     @Column(unique = true, nullable = false)
     private String email;
 
     @Column(nullable = false)
-    private String senha;
+    private String password;
 
     @Enumerated(EnumType.STRING)
-    private enum Role{ USER, ADMNIN}
+    private Role role;
 
+    public enum Role { USER, ADMIN }
 }

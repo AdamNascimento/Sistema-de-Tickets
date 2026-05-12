@@ -1,14 +1,14 @@
-package ticket_system.ticket.entity;
+package ticket_system.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tickets")
+@Table(name = "Tickets")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class Ticket {
 
+public class Tickets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
